@@ -1,34 +1,88 @@
+/* 1. Fonts */
 @font-face {
   font-family: 'Chathura';
   src: url('fonts/Chathura-Bold.ttf') format('truetype');
   font-weight: bold;
+  font-style: normal;
 }
 
+/* 2. Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fffdf5; /* Warm light yellow */
+  color: #2f2f2f;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3. Section Defaults */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* 4. Landing Section */
 #landing {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   background-color: #fffdf5;
 }
 
 #landing img {
-  width: 180px;
+  width: 200px;
   height: auto;
   margin-bottom: 20px;
 }
 
 #landing .title-en {
   font-family: "Modern No. 20", serif;
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 38px;
+  margin-bottom: 8px;
+  color: #365314;
 }
 
 #landing .title-te {
   font-family: 'Chathura', sans-serif;
-  font-size: 32px;
-  color: #2f4f4f;
+  font-size: 36px;
+  color: #4a4a00;
 }
 
+/* 5. Placeholder Message (for development testing) */
+.placeholder {
+  font-style: italic;
+  color: #888;
+  padding: 40px 0;
+}
+
+/* 6. Basic Button Styling (for later use) */
+button, input[type="submit"] {
+  background-color: #365314;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #2b4210;
+}
+
+/* 7. Form Inputs */
+input, textarea, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+}
