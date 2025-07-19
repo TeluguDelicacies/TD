@@ -1,106 +1,185 @@
-/* 1. Fonts */
-@font-face {
-  font-family: 'Chathura';
-  src: url('fonts/Chathura-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'ModernNo20';
-  src: url('assets/fonts/ModernNo20.ttf') format('truetype');
-  font-weight: bold;
-  font-style: ;
-}
-
-
-/* 2. Global Styles */
-body {
+/* ================================
+   Base & Reset Styles
+   ================================ */
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fffdf5; /* Warm light yellow */
-  color: #2f2f2f;
+  box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fefce8; /* Light cream */
+  color: #1c1c1c;
+  line-height: 1.6;
 }
 
-/* 3. Section Defaults */
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* Header Container */
+/* ================================
+   Header (Top Branding Bar)
+   ================================ */
 #main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 32px;
-  background-color: #f5f5f5;
-  border-bottom: 2px solid #ccc;
+  background-color: #fff7ed; /* Very light orange */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Left Branding Text */
-.header-left .brand-text {
+/* --- Branding Text on Left --- */
+.header-branding {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
 }
 
-.brand-en {
-  font-family: "Modern No. 20", serif;
+.header-branding .brand-en {
+  font-family: 'Modern No. 20', serif;
   font-size: 24px;
   font-weight: bold;
-  color: #2c3e50;
-  line-height: 1.2;
+  color: #4d2600;
 }
 
-.brand-te {
-  font-family: 'Chathura', 'Noto Sans Telugu', sans-serif;
+.header-branding .brand-te {
+  font-family: 'Chathura', sans-serif;
   font-size: 20px;
-  color: #2c3e50;
-  line-height: 1.2;
-  margin-top: 2px;
+  color: #6b2d10;
+  margin-top: -4px;
 }
 
-/* Akshaya Logo */
-.header-right .akshaya-logo {
+/* --- Akshaya Logo on Right --- */
+.akshaya-logo {
   height: 60px;
   object-fit: contain;
 }
 
-
-/* 4. Landing Section */
-
-/* Center Logo */
-.landing-logo img {
-  margin-top: 20px;
-  max-width: 200px;
+/* ================================
+   Landing Section (Hero Area)
+   ================================ */
+#landing {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(to bottom, #fffdf4, #fefae0);
 }
 
-.tagline-block {
-  margin-top: 16px;
+/* --- Main Logo --- */
+#landing .logo {
+  height: 80px;
+  margin-bottom: 24px;
+}
+
+/* --- Tagline Section --- */
+#landing .tagline {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3b0a0a;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#landing .tagline-te {
   font-family: 'Chathura', sans-serif;
-  color: #111;
-}
-
-.tagline-en {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.tagline-te {
   font-size: 26px;
-  margin-top: 4px;
+  color: #5e3700;
+  margin-bottom: 8px;
 }
 
-.tagline-line {
-  font-size: 28px;
-  margin-top: 6px;
-  letter-spacing: 8px;
-  font-weight: bold;
-  color: #222;
+/* --- Decorative underline --- */
+.tagline-underline {
+  width: 120px;
+  height: 2px;
+  background-color: #000;
+  margin: 0 auto;
+  position: relative;
+}
+
+.tagline-underline::before,
+.tagline-underline::after {
+  content: '❬';
+  position: absolute;
+  top: -8px;
+  font-size: 16px;
+  color: #000;
+}
+
+.tagline-underline::before {
+  left: -16px;
+}
+
+.tagline-underline::after {
+  right: -16px;
+  content: '❭';
+}
+
+/* ================================
+   Showcase Section
+   ================================ */
+#showcase {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Add more showcase styles below if needed */
+
+/* ================================
+   Product Listing Section
+   ================================ */
+#product-listing {
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+}
+
+/* Add dropdown, cards etc. here */
+
+/* ================================
+   Contact Section
+   ================================ */
+#contact {
+  padding: 40px 20px;
+  background-color: #fffdf4;
+}
+
+/* ================================
+   Address/Footer Section
+   ================================ */
+#address {
+  padding: 20px;
+  background-color: #e0e0e0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ================================
+   Media Queries (Responsive)
+   ================================ */
+@media (max-width: 768px) {
+  #main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .akshaya-logo {
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+
+  #landing {
+    padding: 40px 10px 30px;
+  }
+
+  .tagline {
+    font-size: 22px;
+  }
+
+  .tagline-te {
+    font-size: 20px;
+  }
 }
