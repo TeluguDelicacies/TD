@@ -5,6 +5,13 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'ModernNo20';
+  src: url('assets/fonts/ModernNo20.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /* 2. Global Styles */
 body {
@@ -51,7 +58,7 @@ section {
 
 #landing .title-te {
   font-family: 'Chathura', sans-serif;
-  font-size: 36px;
+  font-size: 50px;
   color: #4a4a00;
 }
 
