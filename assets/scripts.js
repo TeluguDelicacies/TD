@@ -1,5 +1,3 @@
-
-// Load modular sections into the main HTML
 const sections = ["header", "landing", "showcase", "product-listing", "contact", "address"];
 
 sections.forEach(id => {
