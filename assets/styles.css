@@ -35,61 +35,67 @@ section {
 
 /* 4. Landing Section */
 #landing {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.landing-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  padding: 80px 20px;
-  background-color: #fffdf5;
+  padding: 10px 40px;
 }
 
-#landing img {
-  width: 200px;
-  height: auto;
-  margin-bottom: 20px;
+.branding {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
-#landing .title-en {
+.title-en {
   font-family: "Modern No. 20", serif;
-  font-size: 38px;
-  margin-bottom: 8px;
+  font-size: 24px;
   color: #365314;
+  font-weight: bold;
 }
 
-#landing .title-te {
+.title-te {
   font-family: 'Chathura', sans-serif;
-  font-size: 100px;
+  font-size: 26px;
   color: #4a4a00;
+  font-weight: bold;
 }
 
-/* 5. Placeholder Message (for development testing) */
-.placeholder {
-  font-style: italic;
-  color: #888;
-  padding: 40px 0;
+.branding-logo img {
+  height: 60px;
 }
 
-/* 6. Basic Button Styling (for later use) */
-button, input[type="submit"] {
-  background-color: #365314;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
+/* Center Logo */
+.landing-logo img {
+  margin-top: 20px;
+  max-width: 200px;
 }
 
-button:hover, input[type="submit"]:hover {
-  background-color: #2b4210;
+.tagline-block {
+  margin-top: 16px;
+  font-family: 'Chathura', sans-serif;
+  color: #111;
 }
 
-/* 7. Form Inputs */
-input, textarea, select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 400px;
+.tagline-en {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.tagline-te {
+  font-size: 26px;
+  margin-top: 4px;
+}
+
+.tagline-line {
+  font-size: 28px;
+  margin-top: 6px;
+  letter-spacing: 8px;
+  font-weight: bold;
+  color: #222;
 }
