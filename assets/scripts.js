@@ -1,10 +1,30 @@
-const sections = ["header", "landing", "showcase", "product-listing", "contact", "address"];
+document.addEventListener("DOMContentLoaded", () => {
+  const sectionIds = [
+    "header",
+    "landing",
+    "showcase",
+    "product-listing",
+    "contact",
+    "address"
+  ];
 
-sections.forEach(id => {
-  fetch(`includes/${id}.html`)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById(id).innerHTML = html;
-    })
-    .catch(err => console.error(`Error loading ${id}:`, err));
+  sectionIds.forEach(id => {
+    const container = document.getElementById(id);
+    if (container) {
+      fetch(`includes/${id}.html`)
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+          return response.text();
+        })
+        .then(html => {
+          container.innerHTML = html;
+        })
+        .catch(error => {
+          container.innerHTML = `<p style="color:red;">Error loading ${id}.html</p>`;
+          console.error(`Error loading includes/${id}.html:`, error);
+        });
+    } else {
+      console.warn(`No element with ID "${id}" found in index.html`);
+    }
+  });
 });
