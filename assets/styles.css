@@ -48,9 +48,11 @@ body {
   margin-top: -4px;
 }
 
-/* --- Akshaya Logo on Right --- */
-.akshaya-logo {
-  height: 60px;
+/* Akshaya logo in the top-right corner */
+.header .branding-logo img {
+  max-height: 60px;         /* Controls the height */
+  height: auto;             /* Maintains aspect ratio */
+  width: auto;              /* Prevents stretching */
   object-fit: contain;
 }
 
