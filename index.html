@@ -2,30 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Ensures proper rendering and touch zooming on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Telugu Delicacies</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- 🔗 Section-Specific Stylesheets -->
+  <!-- Each section of the website has its own dedicated CSS file -->
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/landing.css" />
+  <link rel="stylesheet" href="styles/showcase.css" />
+  <link rel="stylesheet" href="styles/product-listing.css" />
+  <link rel="stylesheet" href="styles/contact.css" />
+  <link rel="stylesheet" href="styles/address.css" />
+
+  <!-- (Optional) 🔗 Global styles shared across all sections -->
+  <link rel="stylesheet" href="styles/global.css" />
 </head>
 <body>
 
-  <!-- 1. Header -->
+  <!-- 📦 Section Placeholders -->
+  <!-- These empty <div>s will be filled with HTML content from the /includes folder -->
   <div id="header"></div>
-
-  <!-- 2. Landing -->
   <div id="landing"></div>
-
-  <!-- 3. Showcase -->
   <div id="showcase"></div>
-
-  <!-- 4. Product Listing -->
   <div id="product-listing"></div>
-
-  <!-- 5. Contact Form -->
   <div id="contact"></div>
-
-  <!-- 6. Address Section -->
   <div id="address"></div>
 
-  <script src="assets/scripts.js"></script>
+  <!-- 🔄 Dynamic HTML Injection Script -->
+  <!-- This script fetches the corresponding HTML file from the /includes folder -->
+  <!-- and inserts its content into the matching <div> by ID -->
+  <script>
+    // List of section names — should match both the HTML and CSS filenames (without .html or .css)
+    const includes = [
+      "header",
+      "landing",
+      "showcase",
+      "product-listing",
+      "contact",
+      "address"
+    ];
+
+    // Loop through each section and dynamically load its HTML
+    includes.forEach(section => {
+      fetch(`includes/${section}.html`)         // Load HTML from includes/ folder
+        .then(res => res.text())                // Convert the response to plain text
+        .then(data => {
+          document.getElementById(section).innerHTML = data;  // Inject into matching div
+        })
+        .catch(error => {
+          console.error(`Failed to load ${section}.html`, error); // Log errors (optional)
+        });
+    });
+  </script>
 </body>
 </html>
