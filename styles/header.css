@@ -1,63 +1,107 @@
-/* 🔤 Font Imports */
+/* === Font Face === */
 @font-face {
-  font-family: 'Modern No. 20';
-  src: url('../assets/fonts/ModernNo20.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Chathura';
-  src: url('../assets/fonts/Chathura-Bold.ttf') format('truetype');
+  font-family: 'ModernNo20';
+  src: url('assets/fonts/ModernNo20.ttf') format('truetype');
 }
 
-/* 🧱 Header Container */
-.site-header {
+@font-face {
+  font-family: 'ChathuraBold';
+  src: url('assets/fonts/Chathura-Bold.ttf') format('truetype');
+}
+
+/* === Base Layout === */
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* 🧾 Left Side (Brand Name) */
-.header-left {
+.brand-text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  text-align: center;
 }
 
-/* ✍ English Text */
+/* === Brand Lines === */
+.brand-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.2rem;
+  box-sizing: border-box;
+}
+
+/* === English === */
 .brand-en {
-  font-family: 'Modern No. 20', serif;
-  font-size: 1.8rem;
+  font-family: 'ModernNo20', serif;
+  font-size: 2rem;
   font-weight: bold;
-  color: #222;
+  letter-spacing: 0.5px;
 }
 
-/* ✍ Telugu Text */
+/* === Telugu === */
 .brand-te {
-  font-family: 'Chathura', sans-serif;
-  font-size: 1.4rem;
-  color: #444;
-  margin-top: 0.2rem;
+  font-family: 'ChathuraBold', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1.5px; /* Make Chathura slightly wider */
 }
 
-/* 📷 Logo on Right Side */
-.header-right .akshaya-logo {
-  height: 60px;               /* Controls size */
-  width: auto;                /* Keeps aspect ratio */
+/* === Logo === */
+.akshaya-logo img {
+  max-height: 70px;
+  height: auto;
+  width: auto;
   object-fit: contain;
 }
 
-/* 📱 Responsive Adjustments */
-@media (max-width: 768px) {
-  .site-header {
+/* === Portrait Orientation === */
+@media (orientation: portrait) {
+  .header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center;
   }
-  .header-right {
-    align-self: center;
+
+  .brand-text {
+    width: 90vw; /* Both lines wrap to fixed width */
+  }
+
+  .brand-line {
+    width: 100%;
+    display: block;
+  }
+
+  .akshaya-logo {
+    display: none;
+  }
+
+  .brand-en, .brand-te {
+    font-size: 1.6rem;
   }
 }
 
+/* === Landscape Orientation === */
+@media (orientation: landscape) {
+  .header {
+    flex-direction: row;
+  }
+
+  .brand-text {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .brand-line {
+    flex: 1;
+    text-align: center;
+  }
+
+  .akshaya-logo {
+    display: block;
+    margin-left: 1rem;
+  }
+}
