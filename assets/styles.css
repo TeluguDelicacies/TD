@@ -1,187 +1,62 @@
-/* ================================
-   Base & Reset Styles
-   ================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fefce8; /* Light cream */
-  color: #1c1c1c;
-  line-height: 1.6;
-}
-
-/* ================================
-   Header (Top Branding Bar)
-   ================================ */
-#main-header {
+/* ───── HEADER CONTAINER ───── */
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
-  background-color: #fff7ed; /* Very light orange */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  background-color: #fff;
+  flex-wrap: wrap; /* allows stacking on small screens */
 }
 
-/* --- Branding Text on Left --- */
-.header-branding {
+/* ───── LEFT SIDE TEXT ───── */
+.header .branding-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  justify-content: center;
 }
 
-.header-branding .brand-en {
-  font-family: 'Modern No. 20', serif;
+.header .title-en {
+  font-family: "Modern No. 20", serif;
   font-size: 24px;
   font-weight: bold;
-  color: #4d2600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
 }
 
-.header-branding .brand-te {
+.header .title-te {
   font-family: 'Chathura', sans-serif;
   font-size: 20px;
-  color: #6b2d10;
-  margin-top: -4px;
+  color: #4a4a00;
 }
 
-/* Akshaya logo in the top-right corner */
+/* ───── RIGHT SIDE LOGO ───── */
 .header .branding-logo img {
-  max-height: 60px;         /* Controls the height */
-  height: auto;             /* Maintains aspect ratio */
-  width: auto;              /* Prevents stretching */
+  max-height: 60px;
+  width: auto;
+  height: auto;
   object-fit: contain;
 }
 
-/* ================================
-   Landing Section (Hero Area)
-   ================================ */
-#landing {
-  text-align: center;
-  padding: 60px 20px 40px;
-  background: linear-gradient(to bottom, #fffdf4, #fefae0);
-}
-
-/* --- Main Logo --- */
-#landing .logo {
-  height: 80px;
-  margin-bottom: 24px;
-}
-
-/* --- Tagline Section --- */
-#landing .tagline {
-  font-size: 28px;
-  font-weight: bold;
-  color: #3b0a0a;
-  margin-bottom: 10px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-#landing .tagline-te {
-  font-family: 'Chathura', sans-serif;
-  font-size: 26px;
-  color: #5e3700;
-  margin-bottom: 8px;
-}
-
-/* --- Decorative underline --- */
-.tagline-underline {
-  width: 120px;
-  height: 2px;
-  background-color: #000;
-  margin: 0 auto;
-  position: relative;
-}
-
-.tagline-underline::before,
-.tagline-underline::after {
-  content: '❬';
-  position: absolute;
-  top: -8px;
-  font-size: 16px;
-  color: #000;
-}
-
-.tagline-underline::before {
-  left: -16px;
-}
-
-.tagline-underline::after {
-  right: -16px;
-  content: '❭';
-}
-
-/* ================================
-   Showcase Section
-   ================================ */
-#showcase {
-  padding: 40px 20px;
-  background-color: #fff;
-}
-
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-/* Add more showcase styles below if needed */
-
-/* ================================
-   Product Listing Section
-   ================================ */
-#product-listing {
-  padding: 40px 20px;
-  background-color: #f7f7f7;
-}
-
-/* Add dropdown, cards etc. here */
-
-/* ================================
-   Contact Section
-   ================================ */
-#contact {
-  padding: 40px 20px;
-  background-color: #fffdf4;
-}
-
-/* ================================
-   Address/Footer Section
-   ================================ */
-#address {
-  padding: 20px;
-  background-color: #e0e0e0;
-  text-align: center;
-  font-size: 14px;
-  color: #333;
-}
-
-/* ================================
-   Media Queries (Responsive)
-   ================================ */
-@media (max-width: 768px) {
-  #main-header {
+/* ───── RESPONSIVE MEDIA QUERIES ───── */
+@media screen and (max-width: 768px) {
+  .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
   }
 
-  .akshaya-logo {
-    margin-top: 10px;
-    align-self: flex-end;
-  }
-
-  #landing {
-    padding: 40px 10px 30px;
-  }
-
-  .tagline {
-    font-size: 22px;
-  }
-
-  .tagline-te {
+  .header .title-en {
     font-size: 20px;
+    text-align: center;
+  }
+
+  .header .title-te {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .header .branding-logo img {
+    max-height: 50px;
   }
 }
