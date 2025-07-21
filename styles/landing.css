@@ -1,1 +1,60 @@
+@font-face {
+  font-family: 'Chathura';
+  src: url('/assets/fonts/Chathura-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ModernNo20';
+  src: url('/assets/fonts/ModernNo20.ttf') format('truetype');
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #e6f3df; /* Light variant of #93c47d */
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 1rem;
+}
+
+#td-logo {
+  width: auto;
+  max-width: 90%;
+  height: auto;
+  transition: max-height 0.3s ease;
+}
+
+.taglines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.english, .telugu {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  color: #2d4d2f;
+  margin: 0.4rem 0;
+  letter-spacing: 0.5px;
+}
+
+.english {
+  font-family: 'ModernNo20', serif;
+}
+
+.telugu {
+  font-family: 'Chathura', sans-serif;
+}
 
