@@ -8,9 +8,23 @@
 </head>
 <body>
   <section class="landing">
-    <img src="/assets/logo.png" alt="Telugu Delicacies Logo" class="logo" />
-    <h2 class="telugu">సాంప్రదాయ రుచులు, ఆధునిక శైలి</h2>
-    <h1 class="english">Modern Yet Traditional</h1>
+    <img src="assets/logo.png" alt="Telugu Delicacies Logo" class="logo" />
+
+    <div class="taglines">
+      <h2 class="telugu">సాంప్రదాయ రుచులు, ఆధునిక శైలి</h2>
+      <h1 class="english">Modern Yet Traditional</h1>
+    </div>
   </section>
+
+  <script>
+    function applyOrientationClass() {
+      const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+      document.body.classList.toggle("portrait", isPortrait);
+      document.body.classList.toggle("landscape", !isPortrait);
+    }
+
+    applyOrientationClass(); // Initial call
+    window.addEventListener("resize", applyOrientationClass); // Re-check on resize
+  </script>
 </body>
 </html>
