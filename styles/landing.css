@@ -50,6 +50,16 @@ body, html {
   letter-spacing: 0.5px;
 }
 
+.telugu {
+  font-family: 'Chathura', sans-serif;
+  font-size: 2.4rem; /* Slightly larger base size */
+  color: #2d4d2f;
+  margin: 0.4rem 0;
+  transform: scaleX(1.15); /* Stretch horizontally */
+  display: inline-block;   /* So transform works inline */
+  transform-origin: left;
+}
+
 .english {
   font-family: 'ModernNo20', serif;
 }
