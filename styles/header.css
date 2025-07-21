@@ -33,12 +33,12 @@ header {
 .en-text {
   font-family: 'ModernNo20', serif;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .te-text {
   font-family: 'Chathura', sans-serif;
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
