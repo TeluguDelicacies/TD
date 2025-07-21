@@ -1,75 +1,43 @@
-/* === Font Faces === */
-@font-face {
-  font-family: 'ModernNo20';
-  src: url('assets/fonts/ModernNo20.ttf') format('truetype');
-}
+/* Header Section Styles */
 
-@font-face {
-  font-family: 'Chathura-Bold';
-  src: url('assets/fonts/Chathura-Bold.ttf') format('truetype');
-}
-
-/* === Base Header === */
-.header {
+#header {
+  background-color: #ECEBD0; /* Light Olive */
+  background-image: url('../assets/textures/egg-texture.png'); /* Eggshell Texture */
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
+  height: auto;
   box-sizing: border-box;
 }
 
-/* === Brand Text Container === */
-.brand-text {
+/* Text styling */
+.header-text {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 1.5rem; /* gap between English and Telugu */
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* === English Brand === */
-.brand-en {
+.header-text-en {
   font-family: 'ModernNo20', serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: bold;
-  white-space: nowrap;
+  color: #2B2B2B;
+  margin-bottom: 0.25rem;
 }
 
-/* === Telugu Brand === */
-.brand-te {
-  font-family: 'Chathura-Bold', 'sans-serif';
-  font-size: 2.2rem;
-  font-weight: bold;
-  white-space: nowrap;
-  letter-spacing: .5px;
+.header-text-te {
+  font-family: 'ChathuraBold', sans-serif;
+  font-size: 1.8rem;
+  color: #3B3B3B;
 }
 
-/* === Logo === */
-.akshaya-logo img {
-  max-height: 70px;
+/* Logo */
+.header-logo img {
+  max-height: 60px;
+  height: auto;
   width: auto;
-  object-fit: contain;
-}
-
-/* === Portrait Mode === */
-@media (orientation: portrait) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .brand-text {
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .akshaya-logo {
-    display: none;
-  }
-
-  .brand-en,
-  .brand-te {
-    font-size: 1.8rem;
-    text-align: center;
-  }
 }
