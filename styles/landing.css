@@ -8,63 +8,72 @@
   src: url('/assets/fonts/ModernNo20.ttf') format('truetype');
 }
 
-body, html {
+body {
   margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: #e6f3df; /* Light variant of #93c47d */
+  background-color: #e0f0d9; /* Lighter variant of #93c47d */
+  font-family: 'ModernNo20', serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .landing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
   padding: 1rem;
-}
-
-#td-logo {
-  width: auto;
-  max-width: 90%;
-  height: auto;
-  transition: max-height 0.3s ease;
-}
-
-.taglines {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  max-width: 600px;
-  margin-top: 1rem;
 }
 
-.english, .telugu {
-  display: block;
-  width: 100%;
-  font-size: 2rem;
-  color: #2d4d2f;
-  margin: 0.4rem 0;
-  letter-spacing: 0.5px;
+.logo {
+  width: 30vw;
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 1.2rem;
 }
 
 .telugu {
   font-family: 'Chathura', sans-serif;
-  font-size: 2.4rem; /* Slightly larger base size */
+  font-size: 2.6rem;
   color: #2d4d2f;
-  margin: 0.4rem 0;
-  transform: scaleX(1.15); /* Stretch horizontally */
-  display: inline-block;   /* So transform works inline */
-  transform-origin: left;
+  letter-spacing: 0.15rem;
+  margin: 0.2rem 0;
 }
 
 .english {
   font-family: 'ModernNo20', serif;
+  font-size: 2.2rem;
+  color: #2d4d2f;
+  margin: 0.2rem 0;
 }
 
-.telugu {
-  font-family: 'Chathura', sans-serif;
+/* Orientation specific adjustments */
+@media (orientation: portrait) {
+  .logo {
+    width: 40vw;
+  }
+
+  .telugu {
+    font-size: 3rem;
+  }
+
+  .english {
+    font-size: 2.4rem;
+  }
 }
 
+@media (orientation: landscape) {
+  .logo {
+    width: 30vw;
+  }
+
+  .telugu {
+    font-size: 2.6rem;
+  }
+
+  .english {
+    font-size: 2.2rem;
+  }
+}
