@@ -1,43 +1,76 @@
-/* Header Section Styles */
+@font-face {
+  font-family: 'ModernNo20';
+  src: url('assets/fonts/ModernNo20.ttf');
+}
 
-#header {
-  background-color: #ECEBD0; /* Light Olive */
-  background-image: url('../assets/textures/egg-texture.png'); /* Eggshell Texture */
-  background-repeat: repeat;
-  background-size: contain;
-  background-position: center;
+@font-face {
+  font-family: 'Chathura';
+  src: url('assets/fonts/Chathura-Bold.ttf');
+}
+
+header {
+  background-color: #93c47d; /* light green / eggshell tone */
+  padding: 1rem 2rem;
+  background-image: url('assets/textures/eggshell.png'); /* optional if you have texture */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  height: auto;
-  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
-/* Text styling */
 .header-text {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  flex: 1;
 }
 
-.header-text-en {
+.en-text {
   font-family: 'ModernNo20', serif;
   font-size: 2rem;
   font-weight: bold;
-  color: #2B2B2B;
-  margin-bottom: 0.25rem;
 }
 
-.header-text-te {
-  font-family: 'ChathuraBold', sans-serif;
-  font-size: 1.8rem;
-  color: #3B3B3B;
+.te-text {
+  font-family: 'Chathura', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 /* Logo */
+.header-logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .header-logo img {
   max-height: 60px;
-  height: auto;
-  width: auto;
+  object-fit: contain;
+}
+
+/* Portrait Mode */
+@media (orientation: portrait) {
+  .header-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-logo {
+    display: none;
+  }
+
+  .en-text, .te-text {
+    text-align: center;
+  }
 }
