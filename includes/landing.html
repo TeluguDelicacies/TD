@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telugu Delicacies - Landing</title>
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+  <section class="landing">
+    <img id="td-logo" src="/assets/logo.png" alt="Telugu Delicacies Logo" />
+    <div class="taglines">
+      <h1 class="english">Modern yet Traditional</h1>
+      <h2 class="telugu">సాంప్రదాయ రుచులు, ఆధునిక శైలి</h2>
+    </div>
+  </section>
+
+  <script>
+    function adjustOrientation() {
+      const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+      const logo = document.getElementById("td-logo");
+
+      if (isPortrait) {
+        logo.style.maxHeight = "40vh";
+      } else {
+        logo.style.maxHeight = "30vh";
+      }
+    }
+
+    window.addEventListener("load", adjustOrientation);
+    window.addEventListener("resize", adjustOrientation);
+  </script>
+</body>
+</html>
 
